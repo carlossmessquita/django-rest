@@ -1,7 +1,9 @@
 from django.db import models
 
+
 # Create your models here.
 class Aluno(models.Model):
+    objects = models.Manager()
     nome = models.CharField(max_length=100, blank=True)
     rg = models.CharField(max_length=9, blank=True)
     cpf = models.CharField(max_length=11, blank=True)
@@ -12,6 +14,7 @@ class Aluno(models.Model):
 
 
 class Curso(models.Model):
+    objects = models.Manager()
     niveis = (
         ('A', 'Avançado'),
         ('I', 'Intermediário'),
